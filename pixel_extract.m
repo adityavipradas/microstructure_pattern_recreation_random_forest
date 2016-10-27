@@ -1,5 +1,4 @@
 function [bwImg,nb,nw] = pixel_extract(image_name)
-    clc;
     oImg = imread(image_name);
     bwImg = im2bw(oImg);
     nb = sum(sum(bwImg==0));

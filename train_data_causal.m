@@ -46,16 +46,25 @@ function[] = train_data_causal(image_name,pad,h,w)
     view(btree);
     
     
-    %create random initial image
+    %CREATE INITIAL IMAGES
     
     %white
-    %RImg = ones(size(pad_bwImg));
+    RImg = ones(size(pad_bwImg));
     
     %black
-    %RImg = ones(size(pad_bwImg));
+    %RImg = zeros(size(pad_bwImg));
     
     %random
-    RImg = randi([0,1],size(pad_bwImg));
+    %RImg = randi([0,1],size(pad_bwImg));
+    
+    %splices
+    %RImg = zeros(size(pad_bwImg));
+    %initR = floor(size(pad_bwImg,1)/pad);
+    %RImg_temp = repmat(pad_bwImg(1:pad,:), initR, 1);
+    %RImg(1:initR*pad,:) = RImg_temp;
+    
+    %original image
+    %RImg = pad_bwImg;
     
     figure();
     imshow(RImg);
